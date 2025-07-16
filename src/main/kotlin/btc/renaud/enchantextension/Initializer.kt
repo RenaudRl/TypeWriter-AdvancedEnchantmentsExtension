@@ -1,4 +1,4 @@
-package fr.xania.excellentcrates
+package btc.renaud.enchantextension
 
 import com.typewritermc.core.extension.Initializable
 import com.typewritermc.core.extension.annotations.Singleton

@@ -1,2 +1,7 @@
 # TypeWriter-AdvancedEnchantmentsExtension
-Add trigger and objective for AdvancedEnchantments in TypeWriter
+Add Objective and trigger entries for AdvancedEnchantments in TypeWriter
+
+advancedenchants_objective
+advancedenchants_trigger
+
+New Ideas,bugs ? DM me on Discord: _renaud_

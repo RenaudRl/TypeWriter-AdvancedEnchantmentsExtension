@@ -1,4 +1,4 @@
-rootProject.name = "AdvancedEnchantmentsextension"
+rootProject.name = "HmcCosmeticExtension"
 
 pluginManagement {
     repositories {

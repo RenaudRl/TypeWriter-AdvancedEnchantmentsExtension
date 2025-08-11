@@ -1,0 +1,114 @@
+[
+  {
+    "name": "HmcCosmeticExtension",
+    "description": "HMCCosmeticExtension adapters",
+    "version": "0.0.1",
+    "entries": [
+      {
+        "name": "hmc_cosmetic_data",
+        "description": "HMCCosmetics data",
+        "adapter": "Entity",
+        "fields": {
+          "kind": "object",
+          "fields": {
+            "id": {
+              "kind": "primitive",
+              "type": "string",
+              "modifiers": []
+            },
+            "name": {
+              "kind": "primitive",
+              "type": "string",
+              "modifiers": []
+            },
+            "cosmetics": {
+              "kind": "map",
+              "key": {
+                "kind": "enum",
+                  "values": [
+                    "HELMET",
+                    "CHESTPLATE",
+                    "LEGGINGS",
+                    "BOOTS",
+                    "MAINHAND",
+                    "OFFHAND",
+                    "BACKPACK",
+                    "BALLOON"
+                  ],
+                "modifiers": []
+              },
+              "value": {
+                "kind": "primitive",
+                "type": "string",
+                "modifiers": [
+                  {
+                    "name": "help",
+                    "data": "The HMCCosmetics id to apply for this slot. Leave empty to remove."
+                  },
+                  {
+                    "name": "placeholder"
+                  },
+                  {
+                    "name": "icon",
+                    "data": "mdi:face-smile"
+                  }
+                ]
+              },
+              "modifiers": []
+            },
+            "helmetOffset": {
+              "kind": "custom",
+              "editor": "optional",
+              "fieldInfo": {
+                "kind": "primitive",
+                "type": "double",
+                "modifiers": []
+              },
+              "default": {
+                "enabled": false,
+                "value": 0.22
+              },
+              "modifiers": [
+                {
+                  "name": "help",
+                  "data": "Y offset for TextDisplay when helmet is equipped. If not set, auto-calculated based on cosmetic item."
+                }
+              ]
+            },
+            "priorityOverride": {
+              "kind": "custom",
+              "editor": "optional",
+              "fieldInfo": {
+                "kind": "primitive",
+                "type": "integer",
+                "modifiers": []
+              },
+              "default": {
+                "enabled": false,
+                "value": 0
+              },
+              "modifiers": [
+                {
+                  "name": "help",
+                  "data": "The priority of the entry. If not set, the priority of the page will be used."
+                }
+              ]
+            }
+          },
+          "modifiers": []
+        },
+        "color": "#D32F2F",
+        "icon": "mdi:face-smile",
+        "tags": [
+          "hmc_cosmetic",
+          "cosmetic_data",
+          "equipment_data",
+          "living_entity_data",
+          "entity_data",
+          "audience",
+          "manifest"
+        ]
+      }
+    ]
+  }
+]

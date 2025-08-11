@@ -5,38 +5,37 @@ plugins {
     id("com.typewritermc.module-plugin") version "1.3.0"
 }
 
-group = "btc.renaud.enchantextension"
-version = "0.9.0" // The version is the same with the plugin to avoid confusion. :)
+group = "btc.renaud"
+version = "0.0.1"
 
 repositories {
-    maven("https://repo.papermc.io/repository/maven-public/")
-    flatDir { // This is a temporary solution, because the MythicDungeons maven repo doesn't have the v2 api yet.
-        dirs("libs")
-    }
+    mavenCentral()
+    maven("https://maven.typewritermc.com/beta/")
+    maven("https://repo.hibiscusmc.com/releases")
 }
 
 dependencies {
-    // compileOnly(":AdvancedEnchantmentsAPI") // Uncomment when AdvancedEnchantments API is available
-    implementation("com.typewritermc:QuestExtension:0.9.0")
-    implementation("com.typewritermc:BasicExtension:0.9.0")
-    compileOnly(":AdvancedEnchantmentsAPI") // Assuming AdvancedEnchantments is a local module, adjust if it's a dependency from a repository
+    implementation("com.typewritermc:EntityExtension:0.9.0")
+    implementation("com.hibiscusmc:HMCCosmetics:2.8.0-13303096")
+    // Add paper api as compile-only so Bukkit/Paper types (e.g. org.bukkit.entity.Player) are available at compile-time
+    compileOnly("io.papermc.paper:paper-api:1.20.2-R0.1-SNAPSHOT")
 }
 
 typewriter {
     namespace = "renaud"
 
     extension {
-        name = "AdvancedEnchantments"
-        shortDescription = "Typewriter extension for AdvancedEnchantments support."
+        name = "HmcCosmetic"
+        shortDescription = "Typewriter extension for HmcCosmetic support."
         description =
-            "This extension adds support for AdvancedEnchantments enchantments in Typewriter, allowing you to configure triggers for enchantment application in both enchanting tables and anvils."
-        engineVersion = "0.9.0-beta-162"
+            "This extension adds support for HmcCosmetic in Typewriter, allowing you to configure data equipment with cosmetics."
+        engineVersion = "0.9.0-beta-163"
         channel = com.typewritermc.moduleplugin.ReleaseChannel.BETA
         dependencies {
-            dependency("typewritermc", "Quest")
+            dependency("typewritermc", "Entity")
         }
         paper {
-            dependency("AdvancedEnchantments")
+            dependency("HmcCosmetics")
         }
 
     }
